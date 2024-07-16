@@ -662,6 +662,8 @@ setFilteredForces(temp)
           className="find-match__form__input"
           placeholder="Input NIN"
         />
+
+        
         <select
           name=""
           id=""
