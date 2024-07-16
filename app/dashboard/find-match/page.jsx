@@ -611,19 +611,19 @@ setFilteredForces(temp)
             type="text"
             placeholder="Input First Name"
             value={firstName}
-            onChange={(e) => setFirstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Input :ast Name"
             value={middleName}
-            onChange={(e) => setMiddleName}
+            onChange={(e) => setMiddleName(e.target.value)}
           />
         </div>
         <div className="find-match__form__input-group">
           <input type="text" placeholder="Input Last Name"
           value={lastName}
-          onChange={(e) => setLastName}
+          onChange={(e) => setLastName(e.target.value)}
           />
           <input type="text" placeholder="Input Alias" />
         </div>

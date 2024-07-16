@@ -3,6 +3,7 @@ import { createMatch, findMatch } from "@/app/apis/general";
 import { countries } from "@/app/utils/countries";
 import { lgaList } from "@/app/utils/nigerianStatesData";
 import { worldCities } from "@/app/utils/worldCountries";
+import axios from "axios";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -25,6 +26,7 @@ export default function CreateCase() {
   const [image1, setImage1] = useState("");
   const [image1URI, setImage1URI] = useState("");
   const [loading, setLoading] = useState("");
+  const [docLoading, setDocLoading] = useState("");
   const mediaRef = useRef(null);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -68,9 +70,10 @@ setFilteredForces(temp)
 
 
   const fileUpload = (e, imageType) => {
-    // setUploadLoading(true);
+    setDocLoading(true);
 
     let files = e.target.files;
+    let docType = files[0]?.type.split("/")[1];
     setTempImage(e.target.files)
 
     const fileToUri = (file, cb) => {
@@ -88,10 +91,27 @@ setFilteredForces(temp)
       for (let i = 0; i < files.length; i++) {
         fileToUri(files[0], (err, result) => {
           if (result) {
-            if (imageType === 1) {
-              setImage1URI(result.split(",")[1]);
-              // console.log('setImage1URI', result.split(",")[1]);
-            } 
+            axios
+              .post(
+                `https://kaxl3c7ehj.execute-api.us-east-1.amazonaws.com/dev/v1/upload`,
+                {
+                  user: "teddy",
+                  media_type: docType,
+                  contents: result,
+                }
+              )
+              .then((response) => {
+                console.log("response file uploaded", response);
+                if (response?.status === 200) {
+              setImage1URI(response?.data?.body?.data);
+          }
+
+                setDocLoading(false);
+              })
+              .catch((err) => {
+                console.log("ERRRR", err);
+                setDocLoading(false);
+              });
           }
         });
       }
@@ -606,19 +626,19 @@ setFilteredForces(temp)
             type="text"
             placeholder="Input First Name"
             value={firstName}
-            onChange={(e) => setFirstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Input Middle Name"
             value={middleName}
-            onChange={(e) => setMiddleName}
+            onChange={(e) => setMiddleName(e.target.value)}
           />
         </div>
         <div className="find-match__form__input-group">
           <input type="text" placeholder="Input Last Name"
           value={lastName}
-          onChange={(e) => setLastName}
+          onChange={(e) => setLastName(e.target.value)}
           />
           <input type="text" placeholder="Input Alias" />
         </div>
@@ -628,14 +648,14 @@ setFilteredForces(temp)
           className="find-match__form__input"
           placeholder="Input Email"
           value={email}
-            onChange={(e) => setEmail}
+            onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="email"
           className="find-match__form__input"
           placeholder="Input Phone Number"
           value={phone}
-            onChange={(e) => setPhone}
+            onChange={(e) => setPhone(e.target.value)}
         />
         <input
           type="text"
@@ -724,8 +744,8 @@ setFilteredForces(temp)
 
         <button className="find-match__form__button"
         onClick={handleCreateMatch}
-        disabled={loading}
-        >{loading ? "Loading..." : "Upload Match"}</button>
+        disabled={loading || docLoading}
+        >{loading || docLoading ? "Loading..." : "Upload Match"}</button>
       </form>
 
     
