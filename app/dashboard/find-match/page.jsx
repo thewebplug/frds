@@ -9,23 +9,23 @@ import { useEffect, useRef, useState } from "react";
 const forces = ["Nigerian Police Force", "EFFC", "Custom", "Immigration", "BVN", "NIN", "Driver License"];
 
 export default function CreateCase() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [gender, setGender] = useState("");
-  const [country, setCountry] = useState("");
-  const [city, setCity] = useState("");
-  const [lga, setLga] = useState("");
-  const [matchState, setMatchState] = useState("");
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [gender, setGender] = useState(null);
+  const [country, setCountry] = useState(null);
+  const [city, setCity] = useState(null);
+  const [lga, setLga] = useState(null);
+  const [matchState, setMatchState] = useState(null);
   const [forceModal, setForceModal] = useState(false);
-  const [force, setForce] = useState("");
-  const [searchForce, setSearchForce] = useState("");
+  const [force, setForce] = useState(null);
+  const [searchForce, setSearchForce] = useState(null);
   const [filteredForces, setFilteredForces] = useState(forces);
-  const [tempImage, setTempImage] = useState("");
-  const [image1, setImage1] = useState("");
-  const [image1URI, setImage1URI] = useState("");
-  const [image2, setImage2] = useState("");
-  const [loading, setLoading] = useState("");
-  const [middleName, setMiddleName] = useState("");
+  const [tempImage, setTempImage] = useState(null);
+  const [image1, setImage1] = useState(null);
+  const [image1URI, setImage1URI] = useState(null);
+  const [image2, setImage2] = useState(null);
+  const [loading, setLoading] = useState(null);
+  const [middleName, setMiddleName] = useState(null);
   const mediaRef = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [results, setResults] = useState([]);
@@ -88,6 +88,7 @@ setFilteredForces(temp)
       for (let i = 0; i < files.length; i++) {
         fileToUri(files[0], (err, result) => {
           if (result) {
+            console.log('result.split(",")[1]', result.split(",")[1]);
             if (imageType === 1) {
               setImage1URI(result.split(",")[1]);
               // console.log('setImage1URI', result.split(",")[1]);
@@ -187,8 +188,8 @@ setFilteredForces(temp)
             className="pointer"
 
             onClick={() => {
-              setImage1("");
-              setImage1URI("")
+              setImage1(null);
+              setImage1URI(null)
             }}
           >
             <g opacity="0.9">
@@ -367,7 +368,7 @@ setFilteredForces(temp)
               <div key={index} className="pointer" onClick={() => {
                 setForce(item)
                 setForceModal(false)
-                setSearchForce("")
+                setSearchForce(null)
               }}>{item}</div>
               )}
             </div>}
@@ -375,7 +376,7 @@ setFilteredForces(temp)
             {forceModal && <div className="find-match__form__search__modal__button">
               <button
               onClick={() => {
-                setSearchForce("")
+                setSearchForce(null)
                 setForceModal(false)
               }}
               >Cancel</button>
@@ -396,7 +397,7 @@ setFilteredForces(temp)
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="pointer"
-              onClick={() => setForce("")}
+              onClick={() => setForce(null)}
             >
               <path
                 fill-rule="evenodd"
@@ -474,7 +475,7 @@ setFilteredForces(temp)
             </svg>}
            {gender === "male" && <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
            className="pointer"
-           onClick={() => setGender("")}
+           onClick={() => setGender(null)}
            >
 <g filter="url(#filter0_i_8554_84493)">
 <rect width="32" height="32" rx="8" fill="#00B505"/>
@@ -571,7 +572,7 @@ setFilteredForces(temp)
             </svg>}
            {gender === "female" &&  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
            className="pointer"
-           onClick={() => setGender("")}
+           onClick={() => setGender(null)}
            >
 <g filter="url(#filter0_i_8554_84493)">
 <rect width="32" height="32" rx="8" fill="#00B505"/>
@@ -645,14 +646,14 @@ setFilteredForces(temp)
             <option value={item} key={index}>{item}</option>
           ))}
         </select>
-       {country === "Nigeria" || country === "" ? <select name="" id="" className="find-match__form__input"
+       {country === "Nigeria" || !country ? <select name="" id="" className="find-match__form__input"
         value={matchState}
         onChange={(e) => setMatchState(e.target.value)}
         >
           <option value="">Select State</option>
           {Object?.keys(lgaList)?.map((item, index) => <option value={item} key={index}>{item}</option>)}
         </select> : ""}
-        {country === "Nigeria" || country === "" ? <select name="" id="" className="find-match__form__input"
+        {country === "Nigeria" || !country ? <select name="" id="" className="find-match__form__input"
         value={lga}
         onChange={(e) => setLga(e.target.value)}
         >
