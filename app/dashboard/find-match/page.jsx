@@ -45,7 +45,8 @@ export default function CreateCase() {
     );
 
     if(response?.data?.statusCode === 200) {
-      setResults(response?.data?.body?.data)
+      const temp = response?.data?.body?.data?.filter((result) => result?.similarity > 1 )
+      setResults(temp)
       setModalOpen(true)
     }else {
       // setGone("false")

@@ -91,9 +91,14 @@ setFilteredForces(temp)
       for (let i = 0; i < files.length; i++) {
         fileToUri(files[0], (err, result) => {
           if (result) {
+            console.log('klkl',  {
+              user: "teddy",
+              media_type: docType,
+              contents: result,
+            });
             axios
               .post(
-                `https://kaxl3c7ehj.execute-api.us-east-1.amazonaws.com/dev/v1/upload`,
+                `https://20qjp1xm30.execute-api.us-east-1.amazonaws.com/dev/v1/upload`,
                 {
                   user: "teddy",
                   media_type: docType,
@@ -663,7 +668,7 @@ setFilteredForces(temp)
           placeholder="Input NIN"
         />
 
-        
+
         <select
           name=""
           id=""
