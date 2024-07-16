@@ -854,10 +854,11 @@ setFilteredForces(temp)
                 </div>
               </div>
 
-             {results?.map((result) =>
+             {results?.map((result, index) =>
             <div
             className="find-match__modal__inner__table__body"
            onClick={() => navigate(`result/${result?.sk}`)}
+           key={index}
           >
             <img src={result?.images} alt="" />
             <div>{result?.first_name}</div>
