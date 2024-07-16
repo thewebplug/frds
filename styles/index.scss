@@ -1,0 +1,28 @@
+@import 'base/reset';
+
+@import 'utils/variables';
+
+@import 'base/fonts';
+@import 'base/global';
+
+@import 'shared/typography';
+@import 'shared/fields';
+@import 'shared/svgs';
+@import 'shared/buttons';
+
+@import 'components/sidebar';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/dashboardHeader';
+@import 'components/dashboardSideBar';
+@import 'components/menu';
+
+@import 'pages/home';
+@import 'pages/justice/home';
+@import 'pages/justice/auth';
+@import 'pages/justice/dashboard/layout';
+@import 'pages/justice/dashboard/home';
+@import 'pages/justice/dashboard/find-match';
+@import 'pages/justice/dashboard/case-details';
+@import 'pages/justice/dashboard/cases';
+
