@@ -25,6 +25,7 @@ export default function CreateCase() {
   const [image1URI, setImage1URI] = useState("");
   const [image2, setImage2] = useState("");
   const [loading, setLoading] = useState("");
+  const [middleName, setMiddleName] = useState("");
   const mediaRef = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [results, setResults] = useState([]);
