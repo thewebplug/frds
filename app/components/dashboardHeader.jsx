@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Menu from "./menu";
+// import Menu from "./menu";
 import { useState } from "react";
 
 export default function DashboardHeader() {
@@ -16,10 +16,11 @@ export default function DashboardHeader() {
               src="/assets/logo.png"
               width={66.089}
               height={66.089}
+              style={{borderRadius: "50%"}}
             />
           </div>
           <div className="dashboard-header__logo__title-group">
-            <h1 className="dashboard-header__logo__title-group__title">
+          <h1 className="dashboard-header__logo__title-group__title">
               FRDS
             </h1>
             <h2 className="dashboard-header__logo__title-group__subtitle">
@@ -52,12 +53,12 @@ export default function DashboardHeader() {
           >
             Case File
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.9336 6.81641H9.74195H5.06695C4.26695 6.81641 3.86695 7.78307 4.43361 8.34974L8.75028 12.6664C9.44195 13.3581 10.5669 13.3581 11.2586 12.6664L12.9003 11.0247L15.5753 8.34974C16.1336 7.78307 15.7336 6.81641 14.9336 6.81641Z" fill="#ECECFE"/>
+<path d="M5 7.5L10 12.5L15 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 
           </button> */}
 
-          {menuActive &&<Menu items={[{name: "Edit Case file"}, {name: "Create New Case file", function: () => window.location.href = "/justice/dashboard/create-case"}, {name: "Upload existing case file", function: () => window.location.href = "/justice/dashboard/create-case"}]} />}
+          {/* {menuActive &&<Menu items={[{name: "Edit Case file"}, {name: "Create New Case file", function: () => window.location.href = "/justice/dashboard/create-case"}, {name: "Upload existing case file", function: () => window.location.href = "/justice/dashboard/create-case"}]} />} */}
           <div className="dashboard-header__account__search">
             <svg
               width="18"
@@ -77,7 +78,18 @@ export default function DashboardHeader() {
             </svg>
           </div>
 
+<div className="dashboard-header__account__notifications">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.04173 19.0069H14.9583C14.7196 20.425 13.486 21.5054 12 21.5054C10.514 21.5054 9.28037 20.425 9.04173 19.0069ZM12 2.00781C16.1421 2.00781 19.5 5.36567 19.5 9.50781V13.5063L20.9183 16.6664C20.9732 16.7887 21.0016 16.9213 21.0016 17.0554C21.0016 17.5801 20.5763 18.0054 20.0516 18.0054H3.95219C3.8184 18.0054 3.68613 17.9772 3.56402 17.9225C3.08515 17.7081 2.87073 17.1461 3.08511 16.6672L4.50001 13.5067L4.50011 9.49489L4.50453 9.24497C4.6436 5.21425 7.95588 2.00781 12 2.00781Z" fill="black"/>
+<circle cx="17.5" cy="5.5" r="4" fill="#BA0000" stroke="#E9E9E9"/>
+</svg>
+
+</div>
+
+
           <Image
+          className="pointer"
+          onClick={() => window.location.href = "/dashboard/profile"}
             alt=""
             src="/assets/logo.png"
             width={50}
