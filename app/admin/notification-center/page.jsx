@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import TicketDetails from "../ticket-details/page";
-import NotificationCreated from "@/app/components/notificationCreated";
 
 export default function NotificationCenter() {
   const [ticketModal, setTicketModal] = useState(false);
@@ -783,7 +781,6 @@ Medium
         </div>
       )}
 
-      <NotificationCreated open={successOpen} setOpen={setSuccessOpen} />
     </div>
   );
 }
