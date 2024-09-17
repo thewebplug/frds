@@ -9,8 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fullcalendar/bootstrap5": "^6.1.15",
+    "@fullcalendar/core": "^6.1.15",
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
     "@reduxjs/toolkit": "^2.2.4",
     "axios": "^1.6.8",
+    "chart.js": "^4.4.0",
     "dotenv": "^16.4.5",
     "jwt-decode": "^3.1.2",
     "next": "14.1.2",

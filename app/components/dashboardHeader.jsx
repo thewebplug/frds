@@ -23,9 +23,9 @@ export default function DashboardHeader() {
           <h1 className="dashboard-header__logo__title-group__title">
               FRDS
             </h1>
-            <h2 className="dashboard-header__logo__title-group__subtitle">
+            {/* <h2 className="dashboard-header__logo__title-group__subtitle">
               Administered by Economic and Financial Crimes Comission 
-            </h2>
+            </h2> */}
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function DashboardHeader() {
               fill="black"
             />
           </svg>
-          <h2>FMoJ-Dept of Public Prosecution-Abuja HQ</h2>
+          <h2>FRDS</h2>
         </form>
 
         <div className="dashboard-header__account">

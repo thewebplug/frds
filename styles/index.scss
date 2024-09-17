@@ -16,6 +16,9 @@
 @import 'components/dashboardHeader';
 @import 'components/dashboardSideBar';
 @import 'components/menu';
+@import 'components/finance/nav';
+@import 'components/finance/tabs';
+
 
 @import 'pages/home';
 @import 'pages/justice/home';
@@ -26,4 +29,37 @@
 @import 'pages/justice/dashboard/case-details';
 @import 'pages/justice/dashboard/cases';
 @import 'pages/justice/dashboard/profile';
+@import 'pages/justice/dashboard/upload';
+@import 'pages/justice/dashboard/calendar';
+
+
+@import 'pages/justice/dashboard/finance/home';
+@import 'pages/justice/dashboard/finance/layout';
+@import 'pages/justice/dashboard/finance/invoice-and-billing';
+@import 'pages/justice/dashboard/finance/transfer';
+@import 'pages/justice/dashboard/finance/overview';
+
+@import 'pages/justice/dashboard/report-and-analytics/home';
+
+@import 'pages/admin/layout';
+@import 'pages/admin/home';
+@import 'pages/admin/add-user';
+@import 'pages/admin/added-user';
+@import 'pages/admin/deactivate-user';
+@import 'pages/admin/deactivated-user';
+@import 'pages/admin/access-control';
+@import 'pages/admin/add-role';
+@import 'pages/admin/added-role';
+@import 'pages/admin/invite-user';
+@import 'pages/admin/user-request';
+@import 'pages/admin/ticket-details';
+@import 'pages/admin/departments';
+@import 'pages/admin/preview-user';
+@import 'pages/admin/logs';
+@import 'pages/admin/notifications';
+@import 'pages/admin/notification-settings';
+@import 'pages/admin/support';
+@import 'pages/admin/notification-center';
+
+@import 'pages/justice/dashboard/chat/chat';
 
