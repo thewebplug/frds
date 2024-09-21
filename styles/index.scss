@@ -18,6 +18,8 @@
 @import 'components/menu';
 @import 'components/finance/nav';
 @import 'components/finance/tabs';
+@import 'components/notifications';
+
 
 
 @import 'pages/home';
@@ -31,6 +33,7 @@
 @import 'pages/justice/dashboard/profile';
 @import 'pages/justice/dashboard/upload';
 @import 'pages/justice/dashboard/calendar';
+@import 'pages/justice/dashboard/favourite-case';
 
 
 @import 'pages/justice/dashboard/finance/home';
@@ -39,7 +42,6 @@
 @import 'pages/justice/dashboard/finance/transfer';
 @import 'pages/justice/dashboard/finance/overview';
 
-@import 'pages/justice/dashboard/report-and-analytics/home';
 
 @import 'pages/admin/layout';
 @import 'pages/admin/home';
@@ -63,3 +65,5 @@
 
 @import 'pages/justice/dashboard/chat/chat';
 
+@import 'pages/justice/dashboard/report-and-analytics/home';
+@import 'pages/justice/dashboard/report-and-analytics/departments';
