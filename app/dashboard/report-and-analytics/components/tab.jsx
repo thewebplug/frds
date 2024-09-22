@@ -12,11 +12,11 @@ export default function ReportsTab() {
       <div
         className={
           pathname?.includes("report-and-analytics") &&
-          pathname.split("/")?.length < 4
+          pathname.split("/")?.length < 5
             ? "reports__tabs__active"
             : ""
         }
-        onClick={() => window.location.href = "/dashboard/report-and-analytics"}
+        onClick={() => window.location.href = "/dashboard/report-and-analytics/admin"}
       >
         Executive Chairman Office
       </div>

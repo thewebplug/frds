@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ReportsTab from "../components/tab";
+import CheckboxToggle from "@/app/admin/add-role/CheckboxToggle";
 import Chart from "chart.js/auto";
 
 
@@ -108,9 +109,9 @@ export default function CreateCase() {
             fill="#99A2BB"
           />
         </svg>
-        <div
+         <div
           className="pointer"
-          onClick={() => (window.location.href = "/justice/admin")}
+          onClick={() => (window.location.href = "/dashboard/report-and-analytics")}
         >
           Report & Analytics
         </div>

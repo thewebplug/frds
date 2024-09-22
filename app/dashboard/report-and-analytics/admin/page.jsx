@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Chart from "chart.js/auto";
 import ReportsTab from "../components/tab";
+import Chart from "chart.js/auto";
 
 export default function CreateCase() {
   const [dropDown, setDropDown] = useState("MLA Foreign Jurisdiction");
@@ -104,9 +104,9 @@ export default function CreateCase() {
             fill="#99A2BB"
           />
         </svg>
-        <div
+         <div
           className="pointer"
-          onClick={() => (window.location.href = "/justice/admin")}
+          onClick={() => (window.location.href = "/dashboard/report-and-analytics")}
         >
           Report & Analytics
         </div>
